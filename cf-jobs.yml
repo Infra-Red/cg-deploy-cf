@@ -142,7 +142,7 @@ meta:
         from: nats_z2
 
   router_z1_templates:
-  - name: secureproxy
+  - name: secureproxy-old
     release: secureproxy
   - name: consul_agent
     consumes: {consul_client: nil, consul_server: nil, consul_common: nil}
