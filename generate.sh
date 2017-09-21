@@ -27,4 +27,5 @@ spiff merge \
   $SCRIPTPATH/cf-properties.yml \
   $SCRIPTPATH/cf-infrastructure-aws.yml \
   $SECRETS \
+  $COMMON_SECRETS \
   > $MANIFEST
