@@ -266,6 +266,13 @@ properties:
     spring_profiles: ~
     messages: ~
 
+    mfa:
+      providers:
+        google:
+          type: google-authenticator
+          config:
+            providerDescription: cloud.gov
+
     notifications:
       url: ~
 
