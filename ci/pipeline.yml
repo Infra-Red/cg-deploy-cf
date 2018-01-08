@@ -21,6 +21,8 @@ jobs:
       resource: terraform-yaml-development
     - get: cf-stemcell
       trigger: true
+    - get: cf-stemcell-windows
+      trigger: true
     - get: uaa-customized-release
       trigger: true
     - get: cg-s3-secureproxy-release
@@ -41,6 +43,7 @@ jobs:
       - cf-deployment/operations/disable-router-tls-termination.yml
       - cf-deployment/operations/stop-skipping-tls-validation.yml
       - cf-deployment/operations/set-bbs-active-key.yml
+      - cf-deployment/operations/windows-cell.yml
       - cf-deployment-transition/remove-routing-components-for-transition.yml
       - cf-deployment-transition/remove-cf-networking-for-transition.yml
       - cf-manifests/bosh/opsfiles/consul-azs.yml
@@ -898,6 +901,11 @@ resources:
   type: bosh-io-stemcell
   source:
     name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent
+
+- name: cf-stemcell-windows
+  type: bosh-io-stemcell
+  source:
+    name: bosh-aws-xen-hvm-windows2012R2-go_agent
 
 - name: terraform-yaml-development
   type: s3-iam
